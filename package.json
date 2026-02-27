@@ -1,52 +1,27 @@
 {
-  "name": "dataverse",
-  "version": "1.0.0",
-  "main": "src/index.html",
-  "license": "MIT",
+  "name": "dateverse",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "htmlhint": "htmlhint src/*.html test/*.html",
-    "eslint": "eslint --ext .js src/ test/",
-    "pretest": "npm run eslint && npm run htmlhint",
-    "test": "jest --verbose --coverage test/",
-    "test:e2e": "playwright test",
-    "test:oas": "jest --verbose tests-read-only/oa/",
-    "pretest:oas-html": "npm run pretest",
-    "test:oas-html": "jest --verbose tests-read-only/oa/oa-html.spec.js",
-    "test:oas-css": "jest --verbose tests-read-only/oa/oa-css.spec.js",
-    "pretest:oas-js": "npm run pretest",
-    "test:oas-js": "jest --verbose tests-read-only/oa/oa-javascript.spec.js",
-    "pretest:oas-web-api": "npm run pretest",
-    "test:oas-web-api": "jest --verbose tests-read-only/oa/oa-web-api.spec.js",
-    "pretest:oas-prompting": "npm run pretest",
-    "test:oas-prompting": "jest --verbose tests-read-only/oa/oa-prompting.spec.js",
-    "open-coverage-report": "opener ./coverage/lcov-report/index.html",
-    "start": "serve src/",
-    "deploy": "gh-pages -d src"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
-    "@playwright/test": "^1.36.1",
-    "acorn": "^8.8.2",
-    "babel-jest": "^27.0.1",
-    "css": "^3.0.0",
-    "eslint": "^8.3.0",
-    "gh-pages": "^3.1.0",
-    "htmlhint": "^1.0.0",
-    "jest": "^27.0.1",
-    "jsdom": "^22.1.0",
-    "opener": "^1.5.1",
-    "serve": "^14.2.1"
-  },
-  "engines": {
-    "node": ">=16.x"
-  },
-  "bootcamp": {
-    "createdAt": "2024-05-27T17:56:17.548Z",
-    "version": "8.7.0",
-    "commit": "6bfcf3abf54cef1793fffc158785db46b9babb93"
-  },
-  "jest": {
-    "testEnvironment": "jsdom"
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.3.1"
   }
 }
