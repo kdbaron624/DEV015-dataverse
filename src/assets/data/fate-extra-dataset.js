@@ -189,25 +189,24 @@ export default [
     extraInfo: { theme: "Lealtad extrema" }
   },
   {
-    id: "iskandar",
-    name: "Iskandar",
-    shortDescription: "Rey conquistador de sueños compartidos.",
-    description: "Representa la ambición humana llevada a su máxima expresión.",
-    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/3/33/Iskandar_Extella.png",
+    id: "rani",
+    name: "Rani VIII",
+    shortDescription: "Homúnculo lógico y Master observadora.",
+    description: "Rani VIII es una Master creada artificialmente, guiada por la lógica y el desapego emocional. Su visión determinista del mundo contrasta con la lucha existencial de Hakuno, representando una humanidad sin pasión ni propósito propio.",
+    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/2/25/RaniCCC.png/revision/latest?cb=20190716161214&path-prefix=es",
     facts: {
-      class: "Rider",
-      origin: "Macedonia",
-      noblePhantasm: "Ionioi Hetairoi",
-      appearances: ["Fate/EXTELLA", "Fate/EXTELLA LINK"]
+      class: "Master",
+      origin: "Atlas Institute",
+      appearances: ["Fate/Extra", "Fate/Extra CCC"]
     },
-    extraInfo: { theme: "Sueños, conquista" }
+    extraInfo: { theme: "Logica, Desapego" }
   },
   {
     id: "francis-drake",
     name: "Francis Drake",
     shortDescription: "Exploradora del fin del mundo.",
     description: "Espíritu de aventura y libertad absoluta.",
-    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/f/f7/Francis_Drake_Extella.png",
+    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/e/e5/RiderFrancisDrakeStage4.jpg/revision/latest?cb=20190826142117&path-prefix=es",
     facts: {
       class: "Rider",
       origin: "Inglaterra",
@@ -221,7 +220,7 @@ export default [
     name: "Elizabeth Bathory",
     shortDescription: "Ídolo sangrienta del caos.",
     description: "Donde aparece, el caos la sigue.",
-    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/0/0e/Elizabeth_Extella.png",
+    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/c/cc/Lancer_Elizabeth_B%C3%A1thory_FGO_2.png/revision/latest?cb=20210925223404&path-prefix=es",
     facts: {
       class: "Lancer",
       origin: "Europa del Este",
@@ -229,5 +228,159 @@ export default [
       appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { theme: "Vanidad" }
+  },
+  {
+  id: "shinji-matou",
+  name: "Shinji Matou",
+  shortDescription: "Master inestable y manipulador.",
+  description: "Shinji Matou participa en la Guerra del Santo Grial Lunar como un Master emocionalmente frágil y profundamente inseguro. En CCC su decadencia psicológica es más evidente, funcionando como contraste directo con el crecimiento de Hakuno y como reflejo de un ego incapaz de soportar el fracaso.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/a/a5/Recordholder.png/revision/latest?cb=20190803224948&path-prefix=es",
+  facts: {
+    role: "Master",
+    origin: "Familia Matou",
+    appearances: ["Fate/Extra", "Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Inferioridad, negación"
   }
+  },
+  {
+  id: "kiara-sessyoin",
+  name: "Kiara Sessyoin",
+  shortDescription: "Salvadora autoproclamada y antagonista absoluta.",
+  description: "Kiara Sessyoin es una exmonja que abraza el hedonismo absoluto bajo la fachada de la compasión. En Fate/Extra CCC actúa como antagonista principal, representando la corrupción del amor, la espiritualidad distorsionada y el deseo llevado al extremo de la autodeificación.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/5/50/Alter_Ego_Kiara_FGO_1.png/revision/latest?cb=20211024012530&path-prefix=es",
+  facts: {
+    role: "Antagonista",
+    origin: "Humanidad",
+    appearances: ["Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Deseo, corrupción, falso amor"
+  }
+  },
+  {
+  id: "jinako-carigiri",
+  name: "Jinako Carigiri",
+  shortDescription: "Reclusa social y existencia estancada.",
+  description: "Jinako es una joven que escapó del mundo real refugiándose en el Moon Cell. En CCC su arco explora la apatía, el miedo al cambio y la comodidad de la inmovilidad como forma de autodestrucción silenciosa.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/0/00/Room_Guarder.png/revision/latest/scale-to-width-down/1000?cb=20200710234242&path-prefix=es",
+  facts: {
+    role: "NPC / Master",
+    origin: "Humanidad",
+    appearances: ["Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Evasión, estancamiento"
+  }
+  },
+  {
+  id: "twice-h-pieceman",
+  name: "Twice H. Pieceman",
+  shortDescription: "Idealista extremo y antagonista ideológico.",
+  description: "Twice H. Pieceman es el antagonista final de Fate/Extra. Su visión absolutista del sacrificio humano por la paz eterna lo convierte en una figura trágica, símbolo de cómo los ideales pueden convertirse en tiranía cuando se imponen sin compasión.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/d/d6/Fragment_of_year_2030.png/revision/latest?cb=20190802020507&path-prefix=es",
+  facts: {
+    role: "Antagonista",
+    origin: "Humanidad",
+    appearances: ["Fate/Extra"]
+  },
+  extraInfo: {
+    theme: "Idealismo extremo, sacrificio"
+  }
+  },
+  {
+  id: "julius-harway",
+  name: "Julius B. Harway",
+  shortDescription: "Soldado leal y Master del orden absoluto.",
+  description: "Julius B. Harway es el hermano adoptivo de Leo Harway y un ejecutor absoluto de su voluntad. Como Master, representa la obediencia ciega y la supresión del yo en favor del deber. Su papel en Fate/Extra muestra cómo el sacrificio personal puede convertirse en autonegación total.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/d/de/Julius.png/revision/latest?cb=20190726152526&path-prefix=es",
+  facts: {
+    role: "Master",
+    origin: "Familia Harway",
+    appearances: ["Fate/Extra", "Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Lealtad, anulación del yo"
+  }
+},
+{
+  id: "monji-gatou",
+  name: "Monji Gatou",
+  shortDescription: "Asceta errante y Master en búsqueda de redención.",
+  description: "Monji Gatou es un monje que participa en la Guerra del Santo Grial Lunar impulsado por la culpa y el deseo de redención. Su filosofía fatalista y su visión del sufrimiento como expiación lo convierten en una figura trágica dentro del Moon Cell.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/8/88/Miracle_Investigator.PNG.png/revision/latest?cb=20200612210557&path-prefix=es",
+  facts: {
+    role: "Master",
+    origin: "Humanidad",
+    appearances: ["Fate/Extra"]
+  },
+  extraInfo: {
+    theme: "Culpa, penitencia"
+  }
+},
+{
+  id: "karna",
+  name: "Karna",
+  shortDescription: "Héroe solar y Lancer del sacrificio absoluto.",
+  description: "Karna es un Servant Lancer que encarna la virtud, el honor y el sacrificio llevado a su extremo. En Fate/Extra CCC sirve como contrapunto al egoísmo humano, mostrando una nobleza tan absoluta que roza lo inhumano.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/c/cc/Lancer_Karna_FGO_4.png/revision/latest?cb=20210822201413&path-prefix=es",
+  facts: {
+    class: "Lancer",
+    origin: "Mitología Hindú",
+    noblePhantasm: "Vasavi Shakti",
+    appearances: ["Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Honor, sacrificio"
+  }
+},
+{
+  id: "hans-christian-andersen",
+  name: "Hans Christian Andersen",
+  shortDescription: "Caster cínico y narrador cruel.",
+  description: "Hans Christian Andersen es un Servant Caster que observa a la humanidad con ironía y desprecio. Su lengua afilada y su visión nihilista esconden una profunda comprensión del sufrimiento humano y del poder de las historias.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/0/07/CasterHansGOStage4.png/revision/latest?cb=20200721051701&path-prefix=es",
+  facts: {
+    class: "Caster",
+    origin: "Dinamarca",
+    noblePhantasm: "Marchen Meines Lebens",
+    appearances: ["Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Cinismo, verdad cruel"
+  }
+},
+{
+  id: "robin-hood",
+  name: "Robin Hood",
+  shortDescription: "Archer pragmático y asesino táctico.",
+  description: "Robin Hood no es un héroe romántico, sino un asesino eficiente que prioriza la victoria sobre el honor. En Fate/Extra representa el realismo brutal frente a ideales heroicos.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/4/4f/ArcherRobGOStage4.png/revision/latest?cb=20190920225946&path-prefix=es",
+  facts: {
+    class: "Archer",
+    origin: "Inglaterra",
+    noblePhantasm: "Yew Bow",
+    appearances: ["Fate/Extra", "Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Pragmatismo"
+  }
+},
+{
+  id: "nursery-rhyme",
+  name: "Nursery Rhyme",
+  shortDescription: "Caster nacida de cuentos infantiles.",
+  description: "Nursery Rhyme es un espíritu conceptual formado por historias infantiles. Inocente en apariencia pero peligrosa en esencia, representa el poder de la imaginación colectiva y la crueldad inconsciente de los relatos para niños.",
+  imageUrl: "https://static.wikia.nocookie.net/typemoon/images/0/00/FGOCasterAliceStage4.png/revision/latest?cb=20191224145643&path-prefix=es",
+  facts: {
+    class: "Caster",
+    origin: "Concepto Ficticio",
+    noblePhantasm: "Queen Glass Game",
+    appearances: ["Fate/Extra", "Fate/Extra CCC"]
+  },
+  extraInfo: {
+    theme: "Inocencia distorsionada"
+  }
+}
 ];
