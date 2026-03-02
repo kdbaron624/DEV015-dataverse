@@ -1,35 +1,103 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
 
-function App() {
-  const [count, setCount] = useState(0)
+import data from "./data/fate-extra-dataset.js";
+
+import { searchByName, filterByAppearance, getUniqueGames, sortByName, sortByPower } from "./utils/dataFunctions.js";
+import { GlitchText, Scanlines } from "./components/UI.jsx";
+
+import CharacterCard from "./components/CharacterCard.jsx";
+import Modal from "./components/Modal.jsx";
+import FilterBar from "./components/FilterBar.jsx";
+
+import "./styles/global.css";
+import "./styles/App.css";
+
+export default function App() {
+  const [selected, setSelected] = useState(null);
+  const [search, setSearch] = useState("");
+  const [selectedGame, setSelectedGame] = useState(null);
+  const [sortOrder, setSortOrder] = useState("name-asc");
+  const [count, setCount] = useState(0);
+
+  const games = getUniqueGames(data);
+
+  // Aplicar filtros
+  let filtered = data;
+  if (search) filtered = searchByName(filtered, search);
+  if (selectedGame) filtered = filterByAppearance(filtered, selectedGame);
+
+  // Aplicar orden
+  if (sortOrder === "name-asc")   filtered = sortByName(filtered, true);
+  if (sortOrder === "name-desc")  filtered = sortByName(filtered, false);
+  if (sortOrder === "power-desc") filtered = sortByPower(filtered, false);
+  if (sortOrder === "power-asc")  filtered = sortByPower(filtered, true);
+
+  // Contador animado al cargar
+  useEffect(() => {
+    let i = 0;
+    const t = setInterval(() => {
+      i++;
+      setCount(i);
+      if (i >= data.length) clearInterval(t);
+    }, 40);
+    return () => clearInterval(t);
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      <Scanlines />
+      <div className="app__grid-bg" />
+      <div className="app__glow" />
 
-export default App
+      <div className="app__container">
+        <header className="header">
+          <div className="header__eyebrow">
+            <span className="header__line header__line--left" />
+            MOON CELL // HOLY GRAIL WAR // SE.RA.PH ARCHIVE
+            <span className="header__line header__line--right" />
+          </div>
+          <h1 className="header__title">
+            <GlitchText text="FATE / EXTRA CCC" />
+          </h1>
+          <p className="header__subtitle">
+            SERVANT DATABASE //{" "}
+            {count < data.length ? `LOADING_${count}` : `${data.length} RECORDS FOUND`}
+          </p>
+        </header>
+
+        <FilterBar
+          search={search}
+          onSearch={setSearch}
+          selectedGame={selectedGame}
+          onGame={setSelectedGame}
+          games={games}
+          sortOrder={sortOrder}
+          onSort={setSortOrder}
+        />
+
+        <div className="results-count">
+          {`// MOSTRANDO ${filtered.length} DE ${data.length} REGISTROS`}
+        </div>
+
+        <div className="cards-grid">
+          {filtered.length > 0 ? (
+            filtered.map((char) => (
+              <CharacterCard key={char.id} char={char} onClick={setSelected} />
+            ))
+          ) : (
+            <div className="cards-grid__empty">
+              // ERROR_404: NO_RECORDS_MATCH_QUERY
+            </div>
+          )}
+        </div>
+
+        <footer className="footer">
+          <span className="footer__copy">© TYPE-MOON // MARVELOUS // ANIPLEX // FATE/EXTRA CCC</span>
+          <span className="footer__warning">WARNING: MOON CELL KNOWLEDGE IS ABSOLUTE</span>
+        </footer>
+      </div>
+
+      {selected && <Modal char={selected} onClose={() => setSelected(null)} />}
+    </div>
+  );
+}
