@@ -1,4 +1,4 @@
-export default [
+const data = [
   {
     id: "hakuno-kishinami",
     name: "Hakuno Kishinami",
@@ -384,3 +384,5 @@ export default [
   }
 }
 ];
+
+export default data;
