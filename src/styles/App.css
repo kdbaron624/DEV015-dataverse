@@ -1,0 +1,183 @@
+/* ─── APP WRAPPER ────────────────────────────────────────────────────────── */
+.app {
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+}
+
+/* ─── FONDO: GRILLA CYBERNÉTICA ──────────────────────────────────────────── */
+.app__grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.app__glow {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(0, 100, 255, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── SCANLINES ──────────────────────────────────────────────────────────── */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.08) 2px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+}
+
+/* ─── CONTENEDOR PRINCIPAL ───────────────────────────────────────────────── */
+.app__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ─── HEADER ─────────────────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.header__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(0, 212, 255, 0.53);
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.header__line {
+  flex: 1;
+  height: 1px;
+}
+
+.header__line--left  { background: linear-gradient(to right, transparent, rgba(0, 212, 255, 0.27)); }
+.header__line--right { background: linear-gradient(to left,  transparent, rgba(0, 212, 255, 0.27)); }
+
+.header__title {
+  font-size: clamp(32px, 6vw, 64px);
+  font-weight: 700;
+  font-family: var(--font-serif);
+  background: linear-gradient(135deg, #e8f0ff 20%, #00d4ff 50%, #ff2d78 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.header__subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.15em;
+  margin: 12px 0 0;
+}
+
+/* ─── GLITCH TEXT ────────────────────────────────────────────────────────── */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: var(--color-pink);
+  animation: glitch 3s infinite linear;
+  animation-delay: 0.1s;
+}
+
+.glitch::after {
+  color: var(--color-cyan);
+  animation: glitch 3s infinite linear;
+  animation-delay: 0.3s;
+}
+
+/* ─── RESULT COUNT ───────────────────────────────────────────────────────── */
+.results-count {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(0, 212, 255, 0.4);
+  letter-spacing: 0.2em;
+  margin-bottom: 24px;
+}
+
+/* ─── CARDS GRID ─────────────────────────────────────────────────────────── */
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: flex-start;
+}
+
+.cards-grid__empty {
+  font-family: var(--font-mono);
+  color: rgba(255, 45, 120, 0.53);
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  padding: 40px;
+  border: 1px solid rgba(255, 45, 120, 0.2);
+}
+
+/* ─── FOOTER ─────────────────────────────────────────────────────────────── */
+.footer {
+  margin-top: 80px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 212, 255, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer__copy {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(0, 212, 255, 0.2);
+  letter-spacing: 0.2em;
+}
+
+.footer__warning {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: rgba(255, 45, 120, 0.27);
+  letter-spacing: 0.2em;
+}

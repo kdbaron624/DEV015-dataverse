@@ -1,0 +1,46 @@
+/* ─── VARIABLES GLOBALES ─────────────────────────────────────────────────── */
+:root {
+  --color-bg: #03080f;
+  --color-surface: #060b14;
+  --color-surface-alt: #050d1a;
+  --color-cyan: #00d4ff;
+  --color-pink: #ff2d78;
+  --color-text: #e0eaff;
+  --color-text-muted: rgba(160, 200, 255, 0.6);
+  --font-serif: 'Georgia', serif;
+  --font-mono: 'Courier New', monospace;
+}
+
+/* ─── RESET ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-serif);
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface-alt); }
+::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.27); border-radius: 3px; }
+
+input::placeholder { color: rgba(0, 212, 255, 0.35); }
+
+/* ─── ANIMACIONES GLOBALES ───────────────────────────────────────────────── */
+@keyframes scanMove {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100%); }
+}
+
+@keyframes glitch {
+  0%,  100% { clip-path: inset(0 0 98% 0);  transform: translate(-2px, 0); }
+  20%        { clip-path: inset(33% 0 50% 0); transform: translate(2px, 0);  }
+  40%        { clip-path: inset(80% 0 10% 0); transform: translate(-1px, 0); }
+  60%        { clip-path: inset(50% 0 30% 0); transform: translate(1px, 0);  }
+  80%        { clip-path: inset(10% 0 70% 0); transform: translate(-2px, 0); }
+}
