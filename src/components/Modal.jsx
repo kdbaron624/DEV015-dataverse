@@ -3,6 +3,27 @@ import { createPortal } from "react-dom";
 import { getAccent } from "../utils/constants.js";
 import "../styles/Modal.css";
 
+const STAT_KEYS = ["STR", "END", "AGI", "MGI", "LCK", "NP"];
+
+const StatBar = ({ label, value, accent }) => (
+  <div className="modal__statbar">
+    <div className="modal__statbar-header">
+      <span className="modal__statbar-label">{label}</span>
+      <span className="modal__statbar-value">{value}</span>
+    </div>
+    <div className="modal__statbar-track">
+      <div
+        className="modal__statbar-fill"
+        style={{
+          width: `${value}%`,
+          background: `linear-gradient(to right, ${accent}88, ${accent})`,
+          boxShadow: `0 0 8px ${accent}66`,
+        }}
+      />
+    </div>
+  </div>
+);
+
 const Modal = ({ char, onClose }) => {
   const accent = getAccent(char);
   const [visible, setVisible] = useState(false);
@@ -11,7 +32,6 @@ const Modal = ({ char, onClose }) => {
     requestAnimationFrame(() => setVisible(true));
     const handleEsc = (e) => e.key === "Escape" && handleClose();
     window.addEventListener("keydown", handleEsc);
-    // Bloquear scroll del body mientras el modal está abierto
     document.body.style.overflow = "hidden";
     return () => {
       window.removeEventListener("keydown", handleEsc);
@@ -36,9 +56,7 @@ const Modal = ({ char, onClose }) => {
           <span className="modal__record-id">
             MOON CELL // SERVANT RECORD // {char.id.toUpperCase().replace(/-/g, "_")}
           </span>
-          <button className="modal__close-btn" onClick={handleClose}>
-            [CLOSE]
-          </button>
+          <button className="modal__close-btn" onClick={handleClose}>[CLOSE]</button>
         </div>
 
         <div className="modal__body">
@@ -49,6 +67,15 @@ const Modal = ({ char, onClose }) => {
             <div className="modal__class-badge">
               {char.facts.class || char.facts.type || char.facts.role}
             </div>
+            {/* Power score over image */}
+            {char.stats && (
+              <div className="modal__power-badge" style={{ color: accent, borderColor: accent }}>
+                <span className="modal__power-label">POWER</span>
+                <span className="modal__power-value" style={{ textShadow: `0 0 12px ${accent}` }}>
+                  {char.stats.total}
+                </span>
+              </div>
+            )}
           </div>
 
           {/* Info panel */}
@@ -57,7 +84,6 @@ const Modal = ({ char, onClose }) => {
             <h2 className="modal__name">{char.name}</h2>
             <p className="modal__short-desc">{char.shortDescription}</p>
 
-            {/* Divider */}
             <div className="modal__divider">
               <div className="modal__divider-line" />
               <span className="modal__divider-label">PROFILE_DATA</span>
@@ -66,7 +92,28 @@ const Modal = ({ char, onClose }) => {
 
             <p className="modal__description">{char.description}</p>
 
-            {/* Stats grid */}
+            {/* Stats bars */}
+            {char.stats && (
+              <>
+                <div className="modal__divider">
+                  <div className="modal__divider-line" />
+                  <span className="modal__divider-label">COMBAT_STATS</span>
+                  <div className="modal__divider-line" />
+                </div>
+                <div className="modal__statbars">
+                  {STAT_KEYS.map((key) => (
+                    <StatBar key={key} label={key} value={char.stats[key] ?? 0} accent={accent} />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {/* Facts grid */}
+            <div className="modal__divider" style={{ marginTop: "16px" }}>
+              <div className="modal__divider-line" />
+              <span className="modal__divider-label">INTEL</span>
+              <div className="modal__divider-line" />
+            </div>
             <div className="modal__stats">
               {Object.entries(char.facts)
                 .filter(([k]) => k !== "appearances")

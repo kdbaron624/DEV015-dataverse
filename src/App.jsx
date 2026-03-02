@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import data from "./data/fate-extra-dataset.js";
 
-import { searchByName, filterByAppearance, getUniqueGames, sortByName } from "./utils/dataFunctions.js";
+import { searchByName, filterByAppearance, getUniqueGames, sortByName, sortByPower } from "./utils/dataFunctions.js";
 import { GlitchText, Scanlines } from "./components/UI.jsx";
 
 import CharacterCard from "./components/CharacterCard.jsx";
@@ -16,15 +16,23 @@ export default function App() {
   const [selected, setSelected] = useState(null);
   const [search, setSearch] = useState("");
   const [selectedGame, setSelectedGame] = useState(null);
+  const [sortOrder, setSortOrder] = useState("name-asc");
   const [count, setCount] = useState(0);
 
   const games = getUniqueGames(data);
 
+  // Aplicar filtros
   let filtered = data;
   if (search) filtered = searchByName(filtered, search);
   if (selectedGame) filtered = filterByAppearance(filtered, selectedGame);
-  filtered = sortByName(filtered);
 
+  // Aplicar orden
+  if (sortOrder === "name-asc")   filtered = sortByName(filtered, true);
+  if (sortOrder === "name-desc")  filtered = sortByName(filtered, false);
+  if (sortOrder === "power-desc") filtered = sortByPower(filtered, false);
+  if (sortOrder === "power-asc")  filtered = sortByPower(filtered, true);
+
+  // Contador animado al cargar
   useEffect(() => {
     let i = 0;
     const t = setInterval(() => {
@@ -63,6 +71,8 @@ export default function App() {
           selectedGame={selectedGame}
           onGame={setSelectedGame}
           games={games}
+          sortOrder={sortOrder}
+          onSort={setSortOrder}
         />
 
         <div className="results-count">
