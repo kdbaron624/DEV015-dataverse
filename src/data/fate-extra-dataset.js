@@ -4,11 +4,11 @@ const data = [
     name: "Hakuno Kishinami",
     shortDescription: "Protagonista autoconsciente nacido de un error del sistema.",
     description: "Hakuno Kishinami despierta sin recuerdos en el SE.RA.PH como un NPC defectuoso. Su lucha no es solo por ganar la Guerra del Santo Grial Lunar, sino por demostrar que incluso una existencia descartada tiene valor.",
-    imageUrl: "https://static.wikia.nocookie.net/typemoon/images/0/09/Another_ending.png/revision/latest?cb=20190502225141&path-prefix=es",
+    imageUrl: "https://images.weserv.nl/?url=static.wikia.nocookie.net/typemoon/images/0/09/Another_ending.png/revision/latest?cb=20190502225141&path-prefix=es",
     facts: {
       role: "Master",
       origin: "SE.RA.PH",
-      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { theme: "Identidad, existencia" }
   },
@@ -50,7 +50,7 @@ const data = [
       class: "Archer",
       origin: "Era Moderna",
       noblePhantasm: "Unlimited Blade Works",
-      appearances: ["Fate/Extra", "Fate/Extra CCC"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { theme: "Idealismo roto" }
   },
@@ -131,7 +131,7 @@ const data = [
       class: "Archer",
       origin: "Mesopotamia",
       noblePhantasm: "Gate of Babylon",
-      appearances: ["Fate/EXTELLA", "Fate/EXTELLA LINK"]
+      appearances: ["Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { role: "Observador" }
   },
@@ -144,7 +144,7 @@ const data = [
     facts: {
       role: "Soporte",
       origin: "Familia Tohsaka",
-      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC"]
     },
     extraInfo: { theme: "Intelecto" }
   },
@@ -157,7 +157,7 @@ const data = [
     facts: {
       role: "Administrador",
       origin: "Familia Matou",
-      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC"]
     },
     extraInfo: { theme: "Trauma" }
   },
@@ -184,7 +184,7 @@ const data = [
       class: "Saber",
       origin: "Leyendas Artúricas",
       noblePhantasm: "Excalibur Galatine",
-      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { theme: "Lealtad extrema" }
   },
@@ -211,7 +211,7 @@ const data = [
       class: "Rider",
       origin: "Inglaterra",
       noblePhantasm: "Golden Wild Hunt",
-      appearances: ["Fate/EXTELLA", "Fate/EXTELLA LINK"]
+      appearances: ["Fate/Extra", "Fate/Extra CCC", "Fate/EXTELLA", "Fate/EXTELLA LINK"]
     },
     extraInfo: { theme: "Libertad" }
   },
@@ -313,7 +313,7 @@ const data = [
   facts: {
     role: "Master",
     origin: "Humanidad",
-    appearances: ["Fate/Extra"]
+    appearances: ["Fate/Extra", "Fate/Extra CCC"]
   },
   extraInfo: {
     theme: "Culpa, penitencia"

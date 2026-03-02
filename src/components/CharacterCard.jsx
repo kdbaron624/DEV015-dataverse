@@ -21,13 +21,16 @@ const CharacterCard = ({ char, onClick }) => {
         textShadow: `0 0 12px ${accent}88`,
       }}
     >
-
+      {/* Holographic border */}
       <div className="card__border" />
+
+      {/* Corner decorations */}
       <div className="card__corner card__corner--tl" />
       <div className="card__corner card__corner--tr" />
       <div className="card__corner card__corner--bl" />
       <div className="card__corner card__corner--br" />
 
+      {/* Image */}
       <div className="card__image-wrapper">
         <img
           className="card__image"
@@ -38,10 +41,13 @@ const CharacterCard = ({ char, onClick }) => {
         <div className="card__image-gradient" />
       </div>
 
+      {/* Class badge */}
       <div className="card__badge">{label}</div>
 
+      {/* Scan effect */}
       <div className="card__scan" />
 
+      {/* Bottom info */}
       <div className="card__info">
         <div className="card__id">
           {`// ID_${char.id.slice(0, 8).toUpperCase()}`}
