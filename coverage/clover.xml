@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1772563678236" clover="3.2.0">
+  <project timestamp="1772563678236" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="11" methods="14" coveredmethods="14" elements="44" coveredelements="43" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
+    <file name="DataFunctions.js" path="E:\proyectos\DEV015-dataverse\src\utils\DataFunctions.js">
+      <metrics statements="18" coveredstatements="18" conditionals="12" coveredconditionals="11" methods="14" coveredmethods="14"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="31" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="21" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="8" count="30" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="17" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="14" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="16" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="17" count="6" type="stmt"/>
+      <line num="18" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="1" type="cond" truecount="1" falsecount="0"/>
+      <line num="22" count="9" type="stmt"/>
+      <line num="23" count="73" type="cond" truecount="1" falsecount="1"/>
+      <line num="24" count="73" type="cond" truecount="2" falsecount="0"/>
+      <line num="25" count="73" type="cond" truecount="2" falsecount="0"/>
+    </file>
+  </project>
+</coverage>

@@ -13,16 +13,14 @@ export const getUniqueClasses = (data) =>
 export const getUniqueGames = (data) =>
   [...new Set(data.flatMap((c) => c.facts.appearances || []))];
 
-// A → Z o Z → A
 export const sortByName = (data, asc = true) =>
   [...data].sort((a, b) =>
     asc ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
   );
 
-// Más fuerte → más débil o viceversa (usa stats.total)
 export const sortByPower = (data, asc = false) =>
-  [...data].sort((a, b) =>
-    asc
-      ? (a.stats?.total ?? 0) - (b.stats?.total ?? 0)
-      : (b.stats?.total ?? 0) - (a.stats?.total ?? 0)
-  );
+  [...data].sort((a, b) => {
+    const totalA = a.stats?.total ?? 0;
+    const totalB = b.stats?.total ?? 0;
+    return asc ? totalA - totalB : totalB - totalA;
+  });
